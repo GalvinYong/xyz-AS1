@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
 use Livewire\Volt\Volt;
 
 Route::get('/', function () {
@@ -19,4 +20,5 @@ Route::middleware(['auth'])->group(function () {
     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
 });
 
+Route::resource('tasks', TaskController::class);
 require __DIR__.'/auth.php';
